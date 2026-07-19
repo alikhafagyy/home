@@ -58,7 +58,7 @@ async function route() {
         selectedCourseId = courseId;
         
         try {
-            const response = await fetch(`courses/course_${courseId}.json`);
+            const response = await fetch(`course_${courseId}.json`);
             currentCourseData = await response.json();
         } catch (err) {
             currentCourseData = { overview_images: [], overview_text: "Data load error or missing local file.", content: [] };
