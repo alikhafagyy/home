@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyBee - Safe & Clean Portal</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <button id="backBtn" class="back-btn hidden" onclick="handleBack()">← BACK</button>
+            <h2 onclick="goHome()">STUDYBEE</h2>
+        </div>
+        <div class="nav-buttons" id="homeNavButtons">
+            <button class="nav-btn active" id="allTab" onclick="toggleHomeTab('all')">🎛️ BATCHES</button>
+            <button class="nav-btn" id="favTab" onclick="toggleHomeTab('fav')">❤️ WISHLIST</button>
+        </div>
+        <div class="portal-tag">● PORTAL SECURED</div>
+    </header>
+
+    <div id="batchesView">
+        <div class="search-container">
+            <h1>Explore <span>Batches</span></h1>
+            <p>Unlock top-tier educational content, live classes, and high-quality study materials.</p>
+            <input type="text" id="searchBar" class="search-bar" placeholder="Search for a batch (e.g. Science, Maths)..." oninput="filterCourses()">
+        </div>
+        <div id="coursesGrid" class="grid"></div>
+    </div>
+
+    <div id="courseDetailView" class="hidden">
+        <div class="course-banner">
+            <div class="course-info">
+                <span class="enrolled-badge">● ENROLLED</span>
+                <h1 id="bannerTitle">Course Title</h1>
+            </div>
+            <img id="bannerImage" src="" class="course-img-preview" alt="Thumbnail">
+        </div>
+
+        <div class="tabs-container" id="courseTabs">
+            <button class="tab-btn active" id="tabOverview" onclick="switchCourseTab('overview')">ℹ️ OVERVIEW</button>
+            <button class="tab-btn" id="tabContent" onclick="switchCourseTab('content')">📁 COURSE CONTENT</button>
+        </div>
+
+        <div id="overviewPanel" class="overview-box">
+            <div id="overviewImagesArea" class="overview-images"></div>
+            <div id="overviewText" class="overview-text"></div>
+        </div>
+
+        <div id="contentPanel" class="hidden">
+            <div class="dir-bar" id="dirStatus">📁 ROOT DIRECTORY</div>
+            <div id="directoryGrid" class="grid"></div>
+        </div>
+    </div>
+
+    <div id="videoPageView" class="hidden">
+        <div class="video-page-container">
+            <div class="video-page-title" id="videoTitleDisplay">Video Lecture Title</div>
+            <div class="video-wrapper" id="videoWrapper">
+                <video id="my_video" onclick="togglePlay()"></video>
+                <div class="video-controls">
+                    <button class="control-btn" id="customPlayBtn" onclick="togglePlay()">▶</button>
+                    <div class="progress-container" onclick="seekVideo(event)">
+                        <div class="progress-bar" id="customProgressBar"></div>
+                    </div>
+                    <div class="time-display" id="customTimeDisplay">00:00 / 00:00</div>
+                    <button class="control-btn" onclick="toggleFullscreen()">⛶</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

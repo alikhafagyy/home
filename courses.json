@@ -1,0 +1,14 @@
+{
+  "courses": {
+    "184": {
+      "title": "DRONA 2.0 NEET CLASS 11TH",
+      "price": "Free",
+      "thumbnail": "https://dulae92u7241v.cloudfront.net/1772100600/admin_v2/uploads/courses/thumbnail/241318_131_drona%202.0%20NEET%20banner%20app.png"
+    },
+    "186": {
+      "title": "batch",
+      "price": 2999,
+      "thumbnail": "https://chatgpt.com/backend-api/estuary/content?id=file_00000000093871fb862f9bc0f5fb3a7b&ts=495563&p=fs&cid=1&sig=facacea7d30623aebc05364cda312bc46a646c31587260e3adb48717559d09fb&v=0"
+    }
+  }
+}
